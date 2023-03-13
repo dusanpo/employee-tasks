@@ -1,0 +1,27 @@
+.update_form,
+.create_form {
+  display: none;
+}
+.list-name {
+  cursor: pointer;
+}
+.active-list {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #3B71CA;
+}
+.active-employee{
+  color: #3B71CA;
+}
+.data-tasks{
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.task-count{
+  color: #1e708c;
+  font-weight: 500;
+}
+[type="checkbox"]:checked + label {
+  opacity: 0.7;
+  text-decoration: line-through;
+}

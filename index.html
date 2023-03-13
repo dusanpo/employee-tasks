@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employees</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center my-3">Employees list</h1>
+      <div class="form_container">
+        <form class="create_form" id="update_form" onsubmit="add()">
+          <div class="mb-3">
+            <label class="form-label">Full name</label>
+            <input
+              type="text"
+              class="form-control full-name"
+              id="fname"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Email address</label>
+            <input type="email" class="form-control email" required />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Phone number</label>
+            <input type="tel" class="form-control phone" required />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Date of birth</label>
+            <input type="date" class="form-control date-of-birth" required />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Salary</label>
+            <input type="text" class="form-control salary" required />
+          </div>
+          <button type="submit" class="btn btn-primary">Add employee</button>
+        </form>
+
+        <form class="update_form">
+          <input type="text" hidden class="id-form" />
+          <input type="text" class="form-control mb-2 change-name" />
+          <input type="email" class="form-control mb-2 change-email" />
+          <input type="tel" class="form-control mb-2 change-phone" />
+          <input type="date" class="form-control mb-3 change-date-of-birth" />
+          <input type="text" class="form-control mb-3 change-salary" />
+          <button type="button" class="btn btn-success" onclick="update()">
+            Update
+          </button>
+        </form>
+        <div class="add_div">
+          <button type="button" class="btn btn-primary" onclick="create()">
+            Create +
+          </button>
+        </div>
+      </div>
+      <table class="table table-success table-striped mt-4">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Date of birth</th>
+            <th>Salary</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody class="data_table"></tbody>
+      </table>
+    </div>
+
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-4">
+          <div class="all-tasks">
+            <h2>Employees names</h2>
+            <ul class="task-list"></ul>
+          </div>
+        </div>
+        <div class="col-8">
+          <h2>Employee tasks</h2>
+          <div class="data-list-display mt-3">
+            <h3 class="active-employee"></h3>
+            <p class="task-count"></p>
+
+            <div class="data-tasks mb-3"></div>
+
+            <form action="" class="new-task-form">
+              <label>Task title</label>
+              <input
+                type="text"
+                class="form-control mb-2 new-task"
+                placeholder="title"
+              />
+              <label>Task description</label>
+              <input
+                type="text"
+                class="form-control mb-2 task-description"
+                placeholder="description"
+              />
+              <label>Task due date</label>
+              <input type="date" class="form-control mb-3 task-due-date" />
+              <button class="btn btn-primary w-50">Add task</button>
+            </form>
+
+            <div class="my-2">
+              <button class="btn btn-secondary clear-complete-tasks">
+                Clear completed tasks
+              </button>
+              <button class="btn btn-secondary delete-marked-employee">
+                Delete marked employee
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <template id="task-template">
+      <div class="task">
+        <input type="checkbox" />
+        <label><span class="custom-checkbox"></span></label>
+      </div>
+    </template>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
